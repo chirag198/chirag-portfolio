@@ -1,330 +1,183 @@
-/* Change this file to get your personal Portfolio */
-// To change portfolio colors globally go to the  _globalColor.scss file
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
-// Splash Screen
+// Splash Screen Animation
 const splashScreen = {
-  enabled: true, // set false to disable splash screen
-  animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  enabled: true,
+  animation: require("./assets/lottie/splashAnimation"),
+  duration: 2000,
 };
 
-// Summary And Greeting Section
+// Greeting Section
 const illustration = {
-  animated: true // Set to false to use static SVG
+  animated: true,
 };
-
 const greeting = {
   username: "Chirag Gulati",
   title: "Hi all, I'm Chirag",
   subTitle: emoji(
-    "A passionate Software Developer 🚀 with expertise in full-stack development, cloud technologies, and modern frameworks. I love building scalable applications and solving complex problems."
+    "Result-driven Senior Software Engineer and Tech Lead with 6+ years of experience building scalable solutions and leading teams.\nExpertise in Python, Django, Kubernetes, and cloud security. Lover of DevOps, cloud automation, and solving complex challenges!"
   ),
   resumeLink:
-    "https://drive.google.com/file/d/your-resume-link-here/view?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+    "https://drive.google.com/your-resume-file-link-here", // <-- Add your online CV
+  displayGreeting: true,
 };
 
-// Social Media Links
+// Your Social Media Links
 const socialMediaLinks = {
   github: "https://github.com/chirag198",
-  linkedin: "https://www.linkedin.com/in/chirag-gulati/",
-  gmail: "chirag.gulati@example.com",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  linkedin: "https://linkedin.com/in/chirag-gulati-695620149/",
+  gmail: "cgulati198@gmail.com",
+  display: true,
 };
 
 // Skills Section
 const skillsSection = {
   title: "What I do",
-  subTitle: "PASSIONATE FULL STACK DEVELOPER WHO LOVES TO EXPLORE CUTTING-EDGE TECHNOLOGIES",
+  subTitle:
+    "Senior Engineer | Tech Lead | Cloud, DevOps, and SaaS Platform Specialist",
   skills: [
-    emoji(
-      "⚡ Develop responsive and interactive web applications using modern frameworks"
-    ),
-    emoji("⚡ Build scalable backend services and APIs"),
-    emoji(
-      "⚡ Cloud deployment and DevOps practices using AWS, Docker, and Kubernetes"
-    )
+    emoji("⚡ Design & build cloud security and DevOps platforms using Python, Django, Kubernetes"),
+    emoji("⚡ Lead engineering teams—hiring, mentoring, reviewing code, ensuring best practices"),
+    emoji("⚡ Architect secure multi-tenant SaaS solutions with RBAC & cloud integrations"),
+    emoji("⚡ Deep experience integrating open-source in production (Trivy, AWS Security Hub, etc.)")
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "python",
+      skillName: "Python",
       fontAwesomeClassname: "fab fa-python"
     },
     {
-      skillName: "java",
-      fontAwesomeClassname: "fab fa-java"
+      skillName: "Django",
+      fontAwesomeClassname: "fas fa-leaf"
     },
     {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "Kubernetes",
+      fontAwesomeClassname: "fas fa-server"
     },
     {
-      skillName: "aws",
+      skillName: "AWS",
       fontAwesomeClassname: "fab fa-aws"
     },
     {
-      skillName: "docker",
+      skillName: "Docker",
       fontAwesomeClassname: "fab fa-docker"
     },
     {
-      skillName: "git",
+      skillName: "SQL",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "Git / GitHub",
       fontAwesomeClassname: "fab fa-git-alt"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Education Section
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: true,
   schools: [
     {
-      schoolName: "Your University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Bachelor of Technology in Computer Science",
-      duration: "2018 - 2022",
-      desc: "Focused on software engineering, algorithms, and system design.",
-      descBullets: [
-        "Completed coursework in Data Structures, Algorithms, and Software Engineering",
-        "Participated in coding competitions and hackathons"
-      ]
+      schoolName: "Guru Gobind Singh Indraprastha University, New Delhi",
+      subHeader: "Bachelor of Technology, 2015-2019",
+      duration: "2015 - 2019",
+      desc: "Graduated with 8.5 CGPA",
+      descBullets: ["Participated in hackathons, built cloud and security projects"]
     }
   ]
 };
 
-// Your top 3 proficient stacks/tech experience
-const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Frontend Development", //Insert stack or technology you have experience in
-      progressPercentage: "85%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend Development",
-      progressPercentage: "80%"
-    },
-    {
-      Stack: "Cloud & DevOps",
-      progressPercentage: "75%"
-    }
-  ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
-};
-
-// Work experience section
+// Experience Section
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
     {
-      role: "Software Developer",
-      company: "Tech Company",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "2022 – Present",
-      desc: "Developing scalable web applications and contributing to full-stack development projects.",
+      role: "Senior Software Engineer",
+      company: "Accuknox",
+      date: "Nov 2022 – Present",
+      desc: "Led the engineering/devops for Accuknox's Cloud Security Posture Management (CSPM), with deep Kubernetes and Linux DevSecOps focus.",
       descBullets: [
-        "Built responsive web applications using React.js and Node.js",
-        "Implemented RESTful APIs and worked with cloud deployment"
+        "Architected multi-tenancy user management & RBAC for SaaS",
+        "Conducted regular code reviews, mentored, and hired engineers",
+        "Integrated Trivy, AWS Security Hub, CloudSploit, et al. into core cloud platform"
       ]
     },
     {
-      role: "Software Development Intern",
-      company: "Previous Company",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "Summer 2021",
-      desc: "Gained hands-on experience in software development and collaborated with senior developers on various projects."
+      role: "Senior Software Engineer",
+      company: "Pectus Finance GMBH",
+      date: "Jun 2022 – Nov 2022",
+      desc: "Built serverless APIs for financial data, prediction microservices, and custom KPI tools for finance.",
+      descBullets: [
+        "Optimized data uploads (handled 500k+ record files)",
+        "Developed KPI builder for custom company metrics"
+      ]
+    },
+    {
+      role: "Senior Software Engineer",
+      company: "Cashify.in",
+      date: "Oct 2019 – Jun 2022",
+      desc:
+        "Built scalable Django REST platforms, deployed AWS cloud systems, and led integration of payment, auth, and mapping services."
     }
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
-const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Some big projects you have worked on
+// Projects (add replace images as needed in /src/assets/images/)
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME PROJECTS THAT I HAVE WORKED ON",
+  title: "Projects",
+  subtitle: "Key Projects",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Portfolio Website",
-      projectDesc: "A responsive portfolio website built with React.js showcasing my skills and projects",
+      image: require("./assets/images/accuknoxLogo.png"), // Upload your project logo to /images/
+      projectName: "Accuknox Cloud Security",
+      projectDesc: "Cloud security management, vulnerability detection, and automation for Kubernetes and cloud platforms.",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "https://chirag198.github.io/chirag-portfolio/"
-        }
-        //  you can add extra buttons here.
-      ]
-    },
-    {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Web Application",
-      projectDesc: "A full-stack web application with modern UI/UX and backend API integration",
-      footerLink: [
-        {
-          name: "View Project",
-          url: "#"
-        }
-      ]
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Achievement Section
-// Include certificates, talks etc
-
-const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, and Cool Stuff that I have accomplished!",
-
-  achievementsCards: [
-    {
-      title: "Full Stack Development Certificate",
-      subtitle:
-        "Completed comprehensive full-stack development certification covering modern web technologies.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Certificate Logo",
-      footerLink: [
-        {
-          name: "Certification",
-          url: "#"
+          name: "Learn More",
+          url: "https://accuknox.com"
         }
       ]
     },
     {
-      title: "Cloud Computing Certificate",
-      subtitle:
-        "Achieved certification in cloud computing and deployment strategies.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Cloud Certificate Logo",
+      image: require("./assets/images/screenproLogo.png"),
+      projectName: "ScreenPro",
+      projectDesc: "On-demand mobile repair app with expert doorstep service.",
       footerLink: [
         {
-          name: "View Certificate",
-          url: "#"
+          name: "Play Store",
+          url:
+            "https://play.google.com/store/apps/details?id=in.cashify.screenpro"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/phoneshopLogo.png"),
+      projectName: "PhoneShop",
+      projectDesc: "App for phone shop owners—manage inventory, sales, GST, and marketing.",
+      footerLink: [
+        {
+          name: "Play Store",
+          url: "https://play.google.com/store/apps/details?id=co.phoneshop.app"
         }
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Blogs Section
-
-const blogSection = {
-  title: "Blogs",
-  subtitle:
-    "I love sharing my knowledge and experiences through writing about technology and development.",
-  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
-    {
-      url: "#",
-      title: "Getting Started with React.js",
-      description:
-        "A comprehensive guide for beginners to start their journey with React.js development."
-    },
-    {
-      url: "#",
-      title: "Best Practices in Full Stack Development",
-      description:
-        "Sharing insights and best practices I've learned in full-stack development."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Talks Sections
-
-const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY KNOWLEDGE AND EXPERIENCES 😊"
-  ),
-
-  talks: [
-    {
-      title: "Modern Web Development Practices",
-      subtitle: "Talk at Local Tech Meetup",
-      slides_url: "#",
-      event_url: "#"
-    }
-  ],
-  display: false // Set false to hide this section, defaults to true
-};
-
-// Podcast Section
-
-const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT TECHNOLOGY AND DEVELOPMENT",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "#"
-  ],
-  display: false // Set false to hide this section, defaults to true
-};
-
-// Resume Section
-const resumeSection = {
-  title: "Resume",
-  subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
-};
-
+// Contact
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+91-XXXXXXXXXX",
-  email_address: "chirag.gulati@example.com"
+    "Interested in collaborating or want to connect? Drop me a line!",
+  number: "+91 999 964 3553",
+  email_address: "cgulati198@gmail.com"
 };
 
-// Twitter Section
+const isHireable = true;
 
-const twitterDetails = {
-  userName: "chirag_gulati", //Replace "twitter" with your twitter username without @
-  display: false // Set true to display this section, defaults to false
-};
-
-const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+// (Other minor sections can remain as original or removed if not needed)
 
 export {
   illustration,
@@ -333,16 +186,8 @@ export {
   splashScreen,
   skillsSection,
   educationInfo,
-  techStack,
   workExperiences,
-  openSource,
   bigProjects,
-  achievementSection,
-  blogSection,
-  talkSection,
-  podcastSection,
   contactInfo,
-  twitterDetails,
-  isHireable,
-  resumeSection
+  isHireable
 };
